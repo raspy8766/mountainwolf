@@ -4,20 +4,20 @@ var infoodity = angular.module('infoodity', ['ui.router'])
 
 infoodity.config(function($stateProvider, $urlRouterProvider) {
     
-   $urlRouteProvider.otherwise('/home');
+   $urlRouterProvider.otherwise('');
 
     $stateProvider
       .state('home', {
-        url: '/home',
-        templateUrl: 'index.html'
+        url: '',
+        templateUrl: 'testpage.html'
       })
-      .state('home.results', {
-        url: '/results',
-        templateUrl: 'results/results.html'
+      .state('uiview1', {
+        url: '/uiview1',
+        templateUrl: 'uiview1.html'
       })
-      .state('home.reviews', {
-        url: '/reviews',
-        templateUrl: 'reviews/reviews.html'
+      .state('uiview1.uiview2', {
+        url: '/uiview2',
+        templateUrl: 'uiview2.html'
       });
   });
 
