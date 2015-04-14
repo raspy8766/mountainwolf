@@ -3,6 +3,7 @@ angular.module('infoodity.services', [])
   .factory('Results', function ($http) {
 
     var getResults = function(name){
+      console.log('getResults')
       return $http({
         method: 'GET',
         url: '/api/search',
