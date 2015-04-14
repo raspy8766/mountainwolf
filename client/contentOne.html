@@ -1,0 +1,14 @@
+<div class="content contentOne">
+  <h3>THIS IS CONTENT ONE</h3>
+  <a ui-sref="home">Home</a>
+  <br>
+
+  <!-- LINK TO THE PARTIALS. CLICKING ON THIS WILL RENDER THE PARTIAL -->
+  <h5>PARTIALS</h5>
+    <!-- THE ROUTE OF UI-SREF MATCHES THE NAME OF THE STATE IN OUR APP.JS -->
+  <a ui-sref="contentOne.a"> partial a </a> <br>
+  <a ui-sref="contentOne.b"> partial b </a>
+
+  <!-- HERE IS THE NESTED UI VIEW FOR CONTENT ONE PAGE -->
+  <div ui-view=""></div>
+</div>
