@@ -2,14 +2,14 @@ var data = require('../data/testData');
 
 module.exports = {
   getRestaurantsWithName: function(req, res, next) {
-    
+
     var restaurants = data.data.restaurants;
     var list = [];
     restaurants.forEach(function(restaurant){
       if (restaurant.name === req.query.name) {
         list.push(restaurant);
       }
-      
+
     })
     res.end(JSON.stringify(list[0]));
   },

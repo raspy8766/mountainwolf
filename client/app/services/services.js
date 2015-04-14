@@ -5,9 +5,11 @@ angular.module('infoodity.services', [])
     var getResults = function(name){
       return $http({
         method: 'GET',
-        url: '/api/search/' + name
+        url: '/api/search',
+        params: {name: name}
       })
       .then(function(resp) {
+        console.log(resp);
         return resp.data;
       });
     }

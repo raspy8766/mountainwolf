@@ -1,23 +1,23 @@
-angular.module('infoodity.searchResults', [])
+  angular.module('infoodity.searchResults', [])
 
-  .controller('ResultsController',['$scope', 'Results', '$location', function ($scope, Results, $location){
+    .controller('ResultsController',['$scope', 'Results', '$location', function ($scope, Results, $location){
 
-    var nameSearched = $location.path().split('=').pop();
+      var nameSearched = $location.path().split('=').pop();
 
-    $scope.data = {} // getData
+      $scope.data = {} // getData
 
-    $scope.getResults = function (name) { // function used to populate data field (is parameter data necessary??)
-      Results.getResults(name) // call $http request
-        .then(function (data) {
-          $scope.data.results = data; // on return of $http call, populate data
-        })
-        .catch(function (error) {
-          console.error(error); // if error on return of $http call, return error
-        });
-    };
+      $scope.getResults = function (name) { // function used to populate data field (is parameter data necessary??)
+        Results.getResults(name) // call $http request
+          .then(function (data) {
+            console.log(data);
+            $scope.results = data; // on return of $http call, populate data
+          })
+          .catch(function (error) {
+            console.error(error); // if error on return of $http call, return error
+          });
+      };
 
-    $scope.getResults(nameSearched);
+      $scope.getResults(name);
 
-// reroute to restaurant page
-  }])
-
+  // reroute to restaurant page
+    }])
