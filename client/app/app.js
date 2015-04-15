@@ -10,6 +10,7 @@ var app = angular.module('infoodity', [
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
     $stateProvider
+<<<<<<< HEAD
       .state('restaurantPage', {
         url: '/restaurantpage',
         templateUrl: './app/client/restaurantPage/restaurantPage.html',
@@ -31,4 +32,32 @@ var app = angular.module('infoodity', [
         templateUrl: './app/client/submitReview/submitReview.html',
         controller: 'SubmitReviewController'
       })
+=======
+
+      .state('restaurantPage', {
+        url: '/restaurantpage',
+        templateUrl: './app/restaurantPage/restaurantPage.html',
+        controller: 'RestaurantController',
+        views: {
+        "main-content": { templateUrl: "./app/restaurantPage/restaurantPage.html" },
+        "secondary-content": { templateUrl: "./app/reviews/reviews.html" }
+        }
+      })
+
+      .state('restaurantPage.submitReview', {
+        url: '/submitReview',
+        templateUrl: './app/submitReview/submitReview.html',
+        controller: 'SubmitReviewController'
+      })
+
+      .state('results', {
+        url: '/results',
+        templateUrl: './app/results/results.html',
+        controller: 'ResultsController',
+        views: {
+        "main-content": { templateUrl: "./app/results/results.html" }
+        }
+      })
+
+>>>>>>> cf8b200f75711852019662ee61afaa061a40eae9
   }]);

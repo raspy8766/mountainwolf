@@ -2,8 +2,11 @@ angular.module('infoodity.restaurantPage', [])
 
   .controller('RestaurantController', ['$scope', 'Restaurant', '$location', function ($scope, Restaurant, $location){
 
+<<<<<<< HEAD
     console.log('hi');
 
+=======
+>>>>>>> cf8b200f75711852019662ee61afaa061a40eae9
     var idSelected = $location.path().split('/').pop();
 
     $scope.getRestaurant = function(id){
@@ -16,7 +19,12 @@ angular.module('infoodity.restaurantPage', [])
           });
     };
 
+<<<<<<< HEAD
     $scope.getRestaurant(1);
     // <div class="row test" ui-view="secondary-content">
     // </div> // ui route to reviews
+=======
+    $scope.getRestaurant(idSelected);
+
+>>>>>>> cf8b200f75711852019662ee61afaa061a40eae9
 }]);
