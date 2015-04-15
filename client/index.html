@@ -28,11 +28,6 @@
   <script src="/app/services/services.js"></script>
   <script src="/app/submitReview/submitReview.js"></script>
 
-  <script>
-
-
-
-  </script>
 
 
 
@@ -70,11 +65,19 @@
       <span class="col-md-10 test" ui-view="main-content">
         <!--MAIN CONTENT SPAN - WILL REMOVE TEST CLASS-->
 
+      <div class = 'container'>
+        <div ui-view="main-content">
+        </div>
 
+      </div>
 
 
         <!--SECONDARY CONTENT SPAN - WILL REMOVE TEST CLASS-->
-        <div class="row test" ui-view="secondary-content">
+        <div class = 'container'>
+        <div ui-view='secondary-content'></div>
+        </div>
+
+        <div class="row test">
           <p>Secondary content test test test</p>
           <p>Secondary content test test test</p>
           <p>Secondary content test test test</p>

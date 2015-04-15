@@ -10,25 +10,30 @@ var app = angular.module('infoodity', [
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
     $stateProvider
+
       .state('restaurantPage', {
         url: '/restaurantpage',
-        templateUrl: './app/client/restaurantPage/restaurantPage.html',
+        templateUrl: './app/restaurantPage/restaurantPage.html',
         controller: 'RestaurantController',
         views: {
-        "main-content": { templateUrl: "./app/client/restaurantPage/restaurantPage.html" },
-        "secondary-content": { templateUrl: "./app/client/reviews/reviews.html" }
+        "main-content": { templateUrl: "./app/restaurantPage/restaurantPage.html" },
+        "secondary-content": { templateUrl: "./app/reviews/reviews.html" }
         }
       })
-    $stateProvider
-      .state('results', {
-        url: '/results',
-        template: './app/client/results/results.html',
-        controller: 'ResultsController'
-      })
-    $stateProvider
-      .state('submitReview', {
+
+      .state('restaurantPage.submitReview', {
         url: '/submitReview',
-        templateUrl: './app/client/submitReview/submitReview.html',
+        templateUrl: './app/submitReview/submitReview.html',
         controller: 'SubmitReviewController'
       })
+
+      .state('results', {
+        url: '/results',
+        templateUrl: './app/results/results.html',
+        controller: 'ResultsController',
+        views: {
+        "main-content": { templateUrl: "./app/results/results.html" }
+        }
+      })
+
   }]);

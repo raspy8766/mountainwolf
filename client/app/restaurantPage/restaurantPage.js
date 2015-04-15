@@ -2,8 +2,6 @@ angular.module('infoodity.restaurantPage', [])
 
   .controller('RestaurantController', ['$scope', 'Restaurant', '$location', function ($scope, Restaurant, $location){
 
-    console.log('hi');
-
     var idSelected = $location.path().split('/').pop();
 
     $scope.getRestaurant = function(id){
@@ -16,7 +14,6 @@ angular.module('infoodity.restaurantPage', [])
           });
     };
 
-    $scope.getRestaurant(1);
-    // <div class="row test" ui-view="secondary-content">
-    // </div> // ui route to reviews
+    $scope.getRestaurant(idSelected);
+
 }]);
