@@ -50,6 +50,7 @@ input {
 }
 
 .navbarSearch {
+  float: right;
   height: 100%;
   padding: 2px;
 }
