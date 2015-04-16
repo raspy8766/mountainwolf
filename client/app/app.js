@@ -10,39 +10,37 @@ infoodity.config(function($stateProvider, $urlRouterProvider) {
     .state('home', {
       url: '/home',
       views: {
-        'viewA': { 
+        'main-content': { 
           template: '<h1> Welcome! Please Choose a Restaurant Above </h1>' 
         }
       }
     })
-    .state('searchResults', {
-      url: '/search-results',
+    .state('restaurantResults', {
+      url: '/restaurant-results',
       views: {
-        'viewA': { 
-          templateUrl: 'searchResults/results_lance.html',
-  //      controller: 'results/results.js'
+        'main-content': { 
+          templateUrl: 'app/results/results.html',
+          controller: 'ResultsController'
         }
       }
     })
     .state('restaurantPage', {
       url: '/restaurant-page',
       'views': {
-        'viewA': {
-          templateUrl: 'restaurantPage/restaurantPage.html',
+        'main-content': {
+          templateUrl: 'app/restaurantPage/restaurantPage.html',
     //    controller: 'restaurantPage/restaurantPage.js'
-        }
-      }
-    })
-    .state('reviews', {
-      parent: 'restaurantPage',
-      url: '/reviews',
-      views: {
-        'viewB': { 
-          template: 'reviews/reviews.html',
+        },
+        'secondary-content': { 
+          templateUrl: 'app/reviews/reviews.html',
   //      controller: 'reviews/reviews.js'
         }
       }
     })
+//    .state('reviews', {
+//      parent: 'restaurantPage',
+//      url: '/reviews'
+//    })
 //     .state('post', {
 //      url: '/results',
 //      parent: 'restaurantPage',
